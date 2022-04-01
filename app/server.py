@@ -2,7 +2,7 @@
 import socket
 from threading import Thread
 # server's IP address
-SERVER_HOST = ""
+SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 5002
 separator_token = "<SEP>" # separates client name from the message
 
