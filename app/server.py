@@ -46,17 +46,17 @@ def listen_for_client(cs):
 			client_socket.send(msg.encode())
 
 while True:
-		# we keep listening for new connections all the time
-		client_socket, client_address = s.accept()
-		print(f"[+] {client_address} connected.")
-		# add the new connected client to connected sockets
-		client_sockets.add(client_socket)
-		# start a new thread that listens for each client's messages
-		t = Thread(target=listen_for_client, args=(client_socket,)) #question, difference between thread and async?
-		# make the thread daemon so it ends whenever the main thread ends (doesn't continue when the program ends)
-		t.daemon = True
-		# start the thread
-		t.start()
+	# we keep listening for new connections all the time
+	client_socket, client_address = s.accept()
+	print(f"[+] {client_address} connected.")
+	# add the new connected client to connected sockets
+	client_sockets.add(client_socket)
+	# start a new thread that listens for each client's messages
+	t = Thread(target=listen_for_client, args=(client_socket,)) #question, difference between thread and async?
+	# make the thread daemon so it ends whenever the main thread ends (doesn't continue when the program ends)
+	t.daemon = True
+	# start the thread
+	t.start()
 
 # close client sockets
 for cs in client_sockets:
