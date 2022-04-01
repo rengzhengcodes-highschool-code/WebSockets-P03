@@ -31,7 +31,7 @@ def listen_for_client(cs):
 	while True:
 		try:
 			# keep listening for a message from `cs` socket
-			msg.cs.recv(1024).decode()
+			msg = cs.recv(1024).decode()
 		except Exception as e:
 			# client no longer connected
 			# remove it from the set
