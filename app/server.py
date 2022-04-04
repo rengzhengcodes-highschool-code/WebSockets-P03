@@ -64,4 +64,4 @@ for cs in client_sockets:
 	cs.close()
 #close server socket
 s.close()
-sys.exit()
+exit()

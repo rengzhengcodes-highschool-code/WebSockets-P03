@@ -72,4 +72,4 @@ while True:
 
 # close the socket
 s.close()
-sys.exit()
+exit()
