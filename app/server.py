@@ -3,7 +3,7 @@ import socket
 from threading import Thread
 from sys import exit
 # server's IP address
-SERVER_HOST = "0.0.0.0"
+SERVER_HOST = "127.0.0.1"
 SERVER_PORT = 5002
 separator_token = "<SEP>" # separates client name from the message
 
@@ -58,6 +58,9 @@ while True:
 	t.daemon = True
 	# start the thread
 	t.start()
+
+	if input() == 'exit':
+		break
 
 # close client sockets
 for cs in client_sockets:

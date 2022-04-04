@@ -33,7 +33,7 @@ separator_token = "<SEP>" # used to separate client name and message
 
 #initialize TCP socket
 s = socket.socket()
-print(f"Connecting to {SERVER_HOST}:{SERVER_PORT}...")
+print(f"[*] Connecting to {SERVER_HOST}:{SERVER_PORT}...")
 # connect to the server
 s.connect((SERVER_HOST, SERVER_PORT))
 print("[+] Connected.")
