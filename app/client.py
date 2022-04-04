@@ -4,7 +4,7 @@ import random
 from threading import Thread
 from datetime import datetime
 from colorama import Fore, init, Back
-
+from sys import exit
 # init colors
 init()
 
@@ -72,3 +72,4 @@ while True:
 
 # close the socket
 s.close()
+sys.exit()

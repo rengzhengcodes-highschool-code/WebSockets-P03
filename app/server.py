@@ -1,6 +1,7 @@
 # Source: https://www.thepythoncode.com/article/make-a-chat-room-application-in-python
 import socket
 from threading import Thread
+from sys import exit
 # server's IP address
 SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 5002
@@ -63,3 +64,4 @@ for cs in client_sockets:
 	cs.close()
 #close server socket
 s.close()
+sys.exit()
