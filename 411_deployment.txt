@@ -1,0 +1,24 @@
+1. Installing NGINX -- https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
+	1. ```
+	$ sudo apt update
+	```
+	2. ```
+	$ sudo apt install nginx
+	```
+	3. Allowing firewall access:
+		1. ```
+		$ sudo ufw allow 'NGINX HTTP'
+		```
+		2. ```
+		$ sudo ufw status
+		```
+	4. Delete default (if running apache)
+		1. ```$ cd /etc/nginx/sites-enabled ```
+		2. ```$ sudo rm default```
+		3. We do this because if you have apache running, they both attempt to bind to port 80 and 443 (HTTP and HTTPS) which is a big no no.
+	5. start nginx with ```
+	sudo service nginx start
+	```
+	6. Check NGINX is running with ```
+	$ systemctl status nginx
+	```
