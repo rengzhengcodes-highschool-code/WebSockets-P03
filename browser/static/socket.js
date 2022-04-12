@@ -2,7 +2,7 @@
 
 var socket = new WebSocket('ws://127.0.0.1');
 
-function sendText() {
+example.onopen = function sendText() {
 	// makes a message object contianing the data needed to process the message
 	var msg = {
 		type: "message",
