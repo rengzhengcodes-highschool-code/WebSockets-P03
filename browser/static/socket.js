@@ -2,7 +2,7 @@
 
 var socket = new WebSocket('ws://127.0.0.1');
 
-example.onopen = function sendText() {
+function sendText() {
 	// makes a message object contianing the data needed to process the message
 	var msg = {
 		type: "message",
@@ -16,4 +16,17 @@ example.onopen = function sendText() {
 
 	//blank the text input element
 	document.getElementById("text").value = "";
+}
+
+socket.onmessage = function(event) {
+	var chatbox = document.getElementById("chatbox").contentDocument;
+	var text = "";
+	var msg = JSON.parse(event.data);
+	time = new Date(msg.date);
+	var timeStr = time.toLocaleTimeString();
+
+	switch (msg.type) {
+		case "id":
+			clientID = 
+	}
 }
