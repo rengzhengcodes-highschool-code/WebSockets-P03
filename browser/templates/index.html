@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Open Chatroom</title>
-
+		<!--imports compiled stylesheet-->
+		<link rel="stylesheet" href="/static/master.css">
 		<!--Imports foundation 6.7.4 JS-->
 		<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
 		<script>
@@ -11,10 +12,22 @@
 				$(document).foundation();
 			})
 		</script>
-
-		
+		<!--Sets up WebSockets-->
+		<script src="/static/socket.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		{% if user == None %}
+			<form style="padding: 2em;" class="grid-y grid-padding-x" method="post">
+				<div class="small-6 cell">
+					<label>Username</label>
+					<input type="text" name="username" placeholder="Enter your display name!">
+				</div>
+				<div class="large-12 cell grid-x align-center">
+					<input type="submit" class="button custom-button">
+				</div>
+			</form>
+		{% else %}
 
+		{% endif %}
 	</body>
 </html>
