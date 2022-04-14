@@ -23,11 +23,15 @@
 					<input type="text" name="username" placeholder="Enter your display name!">
 				</div>
 				<div class="large-12 cell grid-x align-center">
-					<input type="submit" class="button custom-button">
+					<input type="submit" formaction="/login" class="button custom-button">
 				</div>
 			</form>
 		{% else %}
-
+			<nav class="top-bar">
+				<div class="top-bar-right">
+					Hello {{ user }}!
+				</div>
+			</nav>
 		{% endif %}
 	</body>
 </html>
