@@ -4,10 +4,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-	if 'name' not in session:
-		return render_template('index.html', name=None)
+	if 'user' not in session:
+		return render_template('index.html', user=None)
 	else:
-		return render_template('index.html', name=[session['name']])
+		return render_template('index.html', user=[session['user']])
 
 if __name__ == "__main__":
 	app.run(host="localhost", port=5000, debug=True)
