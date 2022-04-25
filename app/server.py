@@ -59,9 +59,6 @@ while True:
 	# start the thread
 	t.start()
 
-	if input() == 'exit':
-		break
-
 # close client sockets
 for cs in client_sockets:
 	cs.close()
